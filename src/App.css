@@ -1,12 +1,13 @@
 /* App Container */
 .app-container {
-  width: 800px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   color: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow: hidden;
 }
 
@@ -72,7 +73,7 @@
 }
 
 .view-toggle-btn.active .icon {
-  fill: #007AFF;
+  fill: #007aff;
 }
 
 .search-container {
@@ -103,7 +104,7 @@
 }
 
 .search-input:focus {
-  outline: 2px solid #007AFF;
+  outline: 2px solid #007aff;
 }
 
 /* Main Content */
@@ -204,11 +205,13 @@
 }
 
 .bookmarks-header {
-  padding: 16px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(60, 60, 67, 0.18);
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 12px;
+  margin-bottom: 12px;
+  background: none;
 }
 
 .bookmarks-header h2 {
@@ -366,7 +369,7 @@
   align-items: center;
   gap: 4px;
   padding: 8px 16px;
-  background-color: #007AFF;
+  background-color: #007aff;
   color: white;
   border-radius: 20px;
   font-size: 14px;
@@ -377,7 +380,7 @@
 }
 
 .primary-button:hover {
-  background-color: #0055B3;
+  background-color: #0055b3;
 }
 
 .primary-button .icon {
@@ -488,7 +491,7 @@
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #007AFF;
+  border-color: #007aff;
 }
 
 .form-actions {
@@ -504,121 +507,121 @@
     background-color: #1c1c1e;
     color: #ffffff;
   }
-  
+
   .app-header {
     background-color: #1c1c1e;
     border-bottom-color: rgba(255, 255, 255, 0.15);
   }
-  
+
   .logo-container h1 {
     color: #ffffff;
   }
-  
+
   .view-toggle {
     background-color: #2c2c2e;
   }
-  
+
   .view-toggle-btn.active {
     background-color: #3a3a3c;
   }
-  
+
   .view-toggle-btn .icon {
     fill: rgba(255, 255, 255, 0.85);
   }
-  
+
   .view-toggle-btn.active .icon {
-    fill: #0A84FF;
+    fill: #0a84ff;
   }
-  
+
   .search-input {
     background-color: #2c2c2e;
     color: #ffffff;
   }
-  
+
   .collections-sidebar {
     background-color: #1c1c1e;
     border-right-color: rgba(255, 255, 255, 0.15);
   }
-  
+
   .sidebar-header {
     border-bottom-color: rgba(255, 255, 255, 0.15);
   }
-  
+
   .collection-item:hover:not(.active) {
     background-color: #2c2c2e;
   }
-  
+
   .collection-item.active {
     background-color: #3a3a3c;
   }
-  
+
   .collection-count {
     background-color: #3a3a3c;
     color: rgba(255, 255, 255, 0.55);
   }
-  
+
   .bookmarks-header {
     border-bottom-color: rgba(255, 255, 255, 0.15);
   }
-  
+
   .bookmark-card {
     background-color: #2c2c2e;
   }
-  
+
   .bookmark-thumbnail {
     background-color: #3a3a3c;
   }
-  
+
   .bookmark-url {
     color: rgba(255, 255, 255, 0.55);
   }
-  
+
   .icon-button:hover {
     background-color: #3a3a3c;
   }
-  
+
   .icon-button .icon {
     fill: rgba(255, 255, 255, 0.85);
   }
-  
+
   .secondary-button {
     background-color: #3a3a3c;
     color: rgba(255, 255, 255, 0.85);
   }
-  
+
   .secondary-button:hover {
     background-color: rgba(255, 255, 255, 0.15);
   }
-  
+
   .empty-state {
     color: rgba(255, 255, 255, 0.55);
   }
-  
+
   .modal {
     background-color: #2c2c2e;
   }
-  
+
   .modal-header {
     border-bottom-color: rgba(255, 255, 255, 0.15);
   }
-  
+
   .modal-header h3 {
     color: #ffffff;
   }
-  
+
   .form-group label {
     color: rgba(255, 255, 255, 0.85);
   }
-  
+
   .form-group input,
   .form-group select {
     background-color: #3a3a3c;
     border-color: rgba(255, 255, 255, 0.15);
     color: #ffffff;
   }
-  
+
   .form-group input:focus,
   .form-group select:focus {
-    border-color: #0A84FF;
+    border-color: #0a84ff;
   }
 }

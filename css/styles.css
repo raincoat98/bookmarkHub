@@ -1,45 +1,45 @@
 /* Variables */
 :root {
   /* Colors - Light Theme */
-  --color-primary-light: #007AFF;
-  --color-primary-dark: #0055B3;
-  --color-secondary-light: #5AC8FA;
-  --color-accent-light: #FF9500;
-  --color-success-light: #34C759;
-  --color-warning-light: #FF9500;
-  --color-error-light: #FF3B30;
-  
-  --color-bg-light: #FFFFFF;
-  --color-bg-secondary-light: #F2F2F7;
-  --color-bg-tertiary-light: #E5E5EA;
-  
+  --color-primary-light: #007aff;
+  --color-primary-dark: #0055b3;
+  --color-secondary-light: #5ac8fa;
+  --color-accent-light: #ff9500;
+  --color-success-light: #34c759;
+  --color-warning-light: #ff9500;
+  --color-error-light: #ff3b30;
+
+  --color-bg-light: #ffffff;
+  --color-bg-secondary-light: #f2f2f7;
+  --color-bg-tertiary-light: #e5e5ea;
+
   --color-text-primary-light: #000000;
-  --color-text-secondary-light: #3C3C43;
-  --color-text-tertiary-light: #8E8E93;
-  
+  --color-text-secondary-light: #3c3c43;
+  --color-text-tertiary-light: #8e8e93;
+
   --color-border-light: rgba(60, 60, 67, 0.18);
   --color-shadow-light: rgba(0, 0, 0, 0.1);
-  
+
   /* Colors - Dark Theme */
-  --color-primary-dark-theme: #0A84FF;
-  --color-primary-dark-dark-theme: #409CFF;
-  --color-secondary-dark-theme: #64D2FF;
-  --color-accent-dark-theme: #FF9F0A;
-  --color-success-dark-theme: #30D158;
-  --color-warning-dark-theme: #FFD60A;
-  --color-error-dark-theme: #FF453A;
-  
-  --color-bg-dark: #1C1C1E;
-  --color-bg-secondary-dark: #2C2C2E;
-  --color-bg-tertiary-dark: #3A3A3C;
-  
-  --color-text-primary-dark: #FFFFFF;
+  --color-primary-dark-theme: #0a84ff;
+  --color-primary-dark-dark-theme: #409cff;
+  --color-secondary-dark-theme: #64d2ff;
+  --color-accent-dark-theme: #ff9f0a;
+  --color-success-dark-theme: #30d158;
+  --color-warning-dark-theme: #ffd60a;
+  --color-error-dark-theme: #ff453a;
+
+  --color-bg-dark: #1c1c1e;
+  --color-bg-secondary-dark: #2c2c2e;
+  --color-bg-tertiary-dark: #3a3a3c;
+
+  --color-text-primary-dark: #ffffff;
   --color-text-secondary-dark: rgba(255, 255, 255, 0.85);
   --color-text-tertiary-dark: rgba(255, 255, 255, 0.55);
-  
+
   --color-border-dark: rgba(255, 255, 255, 0.15);
   --color-shadow-dark: rgba(0, 0, 0, 0.3);
-  
+
   /* Active Theme Colors (defaults to light) */
   --color-primary: var(--color-primary-light);
   --color-primary-dark: var(--color-primary-dark);
@@ -48,18 +48,18 @@
   --color-success: var(--color-success-light);
   --color-warning: var(--color-warning-light);
   --color-error: var(--color-error-light);
-  
+
   --color-bg: var(--color-bg-light);
   --color-bg-secondary: var(--color-bg-secondary-light);
   --color-bg-tertiary: var(--color-bg-tertiary-light);
-  
+
   --color-text-primary: var(--color-text-primary-light);
   --color-text-secondary: var(--color-text-secondary-light);
   --color-text-tertiary: var(--color-text-tertiary-light);
-  
+
   --color-border: var(--color-border-light);
   --color-shadow: var(--color-shadow-light);
-  
+
   /* Spacing */
   --space-1: 4px;
   --space-2: 8px;
@@ -67,7 +67,7 @@
   --space-4: 24px;
   --space-5: 32px;
   --space-6: 48px;
-  
+
   /* Typography */
   --font-size-xs: 12px;
   --font-size-sm: 14px;
@@ -75,36 +75,36 @@
   --font-size-lg: 18px;
   --font-size-xl: 20px;
   --font-size-2xl: 24px;
-  
+
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  
+
   --line-height-body: 1.5;
   --line-height-heading: 1.2;
-  
+
   /* Borders */
   --border-radius-sm: 6px;
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
   --border-radius-xl: 16px;
   --border-radius-full: 9999px;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px var(--color-shadow);
   --shadow-md: 0 2px 4px var(--color-shadow);
   --shadow-lg: 0 4px 8px var(--color-shadow);
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
   --transition-slow: 350ms ease;
-  
+
   /* App Dimensions */
   --popup-width: 400px;
-  --popup-height: 500px;
-  --sidebar-width: 200px;
-  --header-height: 112px; /* Includes search bar */
+  --popup-height: 600px;
+  --sidebar-width: 250px;
+  --header-height: 112px;
 }
 
 /* Dark Theme */
@@ -117,15 +117,15 @@
     --color-success: var(--color-success-dark-theme);
     --color-warning: var(--color-warning-dark-theme);
     --color-error: var(--color-error-dark-theme);
-    
+
     --color-bg: var(--color-bg-dark);
     --color-bg-secondary: var(--color-bg-secondary-dark);
     --color-bg-tertiary: var(--color-bg-tertiary-dark);
-    
+
     --color-text-primary: var(--color-text-primary-dark);
     --color-text-secondary: var(--color-text-secondary-dark);
     --color-text-tertiary: var(--color-text-tertiary-dark);
-    
+
     --color-border: var(--color-border-dark);
     --color-shadow: var(--color-shadow-dark);
   }
@@ -139,15 +139,15 @@
   --color-success: var(--color-success-dark-theme);
   --color-warning: var(--color-warning-dark-theme);
   --color-error: var(--color-error-dark-theme);
-  
+
   --color-bg: var(--color-bg-dark);
   --color-bg-secondary: var(--color-bg-secondary-dark);
   --color-bg-tertiary: var(--color-bg-tertiary-dark);
-  
+
   --color-text-primary: var(--color-text-primary-dark);
   --color-text-secondary: var(--color-text-secondary-dark);
   --color-text-tertiary: var(--color-text-tertiary-dark);
-  
+
   --color-border: var(--color-border-dark);
   --color-shadow: var(--color-shadow-dark);
 }
@@ -160,13 +160,21 @@ body {
   background-color: var(--color-bg);
   width: var(--popup-width);
   height: var(--popup-height);
+  min-width: var(--popup-width);
+  min-height: var(--popup-height);
+  max-width: var(--popup-width);
+  max-height: var(--popup-height);
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Layout */
 #app {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -230,7 +238,8 @@ body {
 
 #search-input {
   width: 100%;
-  padding: var(--space-2) var(--space-2) var(--space-2) calc(var(--space-2) * 3 + 18px);
+  padding: var(--space-2) var(--space-2) var(--space-2)
+    calc(var(--space-2) * 3 + 18px);
   background-color: var(--color-bg-secondary);
   border: none;
   border-radius: var(--border-radius-full);
@@ -246,6 +255,7 @@ body {
   flex: 1;
   display: flex;
   overflow: hidden;
+  min-height: 0;
 }
 
 /* Sidebar */
@@ -341,8 +351,9 @@ body {
   padding: var(--space-3);
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: var(--space-3);
+  min-height: 0;
 }
 
 /* Bookmarks List View */
@@ -359,7 +370,8 @@ body {
   background-color: var(--color-bg-secondary);
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
   cursor: pointer;
 }
 
@@ -614,4 +626,132 @@ body {
 
 .icon {
   fill: currentColor;
+}
+
+/* Notion 스타일 북마크 저장 폼 */
+.bookmark-add-modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 32px 24px 24px 24px;
+  background: var(--color-bg);
+  box-sizing: border-box;
+}
+
+.bookmark-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.bookmark-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--color-bg-secondary);
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+}
+
+.bookmark-title-view {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.bookmark-desc {
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+}
+
+.bookmark-note {
+  width: 100%;
+  min-height: 60px;
+  max-height: 120px;
+  resize: vertical;
+  font-size: 15px;
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.bookmark-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.bookmark-collection {
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.bookmark-tags {
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.bookmark-url {
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+}
+
+.bookmark-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  align-items: center;
+}
+
+.toggle-btn {
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border 0.15s;
+}
+.toggle-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-primary);
+}
+.save-btn {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 7px 22px;
+  border-radius: 6px;
+  border: none;
+  background: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+  margin-left: auto;
+  transition: background 0.15s;
+}
+.save-btn:hover {
+  background: var(--color-primary-dark);
 }

@@ -7,17 +7,21 @@
     "dev": "vite",
     "start": "vite",
     "build": "tsc -b && vite build",
+    "build:extension": "tsc -b && vite build && npm run copy-extension-files",
+    "copy-extension-files": "cp manifest.json dist/ && cp -r icons dist/ && cp -r css dist/ && cp -r js dist/ && cp popup.html dist/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@types/chrome": "^0.0.260",
     "@types/react": "^18.3.5",
+    "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.17",
