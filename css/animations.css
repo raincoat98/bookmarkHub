@@ -1,0 +1,130 @@
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleOut {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.95); opacity: 0; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideOutDown {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(20px); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Apply animations */
+.modal-backdrop {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.modal.active {
+  animation: scaleIn 0.25s ease forwards;
+}
+
+.bookmark-card {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.bookmark-card:active {
+  animation: pulse 0.3s ease;
+}
+
+.collection-item {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+/* Transition Classes */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.scale-enter {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.scale-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.scale-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-exit-active {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 200ms;
+}
+
+/* Hover Effects */
+.bookmark-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bookmark-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.collection-item {
+  transition: background-color 0.15s ease;
+}
+
+.collection-item:hover:not(.active) {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Button Animations */
+.primary-button, .secondary-button, .icon-button {
+  transition: all 0.2s ease;
+}
+
+.primary-button:active, .secondary-button:active, .icon-button:active {
+  transform: scale(0.96);
+}
+
+/* Smooth color theme transitions */
+body, button, input, select {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
