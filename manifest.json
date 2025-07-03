@@ -3,7 +3,15 @@
   "name": "BookmarkHub",
   "version": "1.0.0",
   "description": "A beautiful bookmark manager with collection organization",
-  "permissions": ["bookmarks", "storage", "tabs", "activeTab", "notifications"],
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "tabs",
+    "activeTab",
+    "notifications",
+    "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

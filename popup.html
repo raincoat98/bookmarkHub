@@ -16,34 +16,37 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           sans-serif;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        padding: 20px;
-        min-width: 500px;
+        padding: 15px;
+        min-width: 450px;
         min-height: 500px;
-        width: 500px;
-        height: 500px;
-        max-width: 500px;
-        max-height: 500px;
+        width: 450px;
+        height: 520px;
+        max-width: 450px;
+        max-height: 520px;
+        overflow: hidden;
       }
 
       #app {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        height: 100%;
       }
 
       .bookmark-add-modal {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        max-width: 430px;
+        min-width: 430px;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
         border-radius: 20px;
-        padding: 30px;
-        width: 100%;
-        max-width: 500px;
-        min-height: 500px;
+        padding: 12px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
         animation: slideIn 0.3s ease-out;
+        overflow: hidden;
       }
 
       @keyframes slideIn {
@@ -57,28 +60,34 @@
         }
       }
 
+      .bookmark-content-area {
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 8px;
+      }
+
       .bookmark-header {
         display: flex;
         align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 20px;
-        padding: 20px;
+        gap: 12px;
+        margin-bottom: 15px;
+        padding: 15px;
         background: rgba(255, 255, 255, 0.5);
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.3);
       }
 
       .bookmark-thumb {
-        width: 64px;
-        height: 64px;
-        border-radius: 12px;
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
         object-fit: cover;
         border: 2px solid rgba(255, 255, 255, 0.5);
         background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 20px;
         flex-shrink: 0;
       }
 
@@ -88,29 +97,35 @@
       }
 
       .bookmark-title-view {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
         color: #333;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         word-break: break-word;
       }
 
       .bookmark-desc {
-        font-size: 14px;
+        font-size: 13px;
         color: #666;
-        line-height: 1.4;
+        line-height: 1.3;
         word-break: break-word;
+        max-height: 40px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
       .bookmark-note {
         width: 100%;
-        min-height: 100px;
-        padding: 15px;
+        min-height: 80px;
+        max-height: 120px;
+        padding: 12px;
         border: 2px solid rgba(255, 255, 255, 0.3);
         border-radius: 12px;
         font-size: 14px;
         resize: vertical;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
@@ -125,16 +140,16 @@
       .bookmark-meta {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin-bottom: 25px;
+        gap: 12px;
+        margin-bottom: 15px;
       }
 
       .bookmark-collection,
       .bookmark-url {
-        padding: 12px 15px;
+        padding: 10px 12px;
         border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        font-size: 14px;
+        border-radius: 10px;
+        font-size: 13px;
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
@@ -153,7 +168,59 @@
         color: #666;
       }
 
+      .bookmark-tags {
+        grid-column: 1 / -1;
+        padding: 10px 12px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .bookmark-tags:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+      }
+
+      .bookmark-options {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+
+      .option-btn {
+        padding: 6px 10px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .option-btn.active {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+      }
+
+      .option-btn:hover {
+        border-color: #667eea;
+        transform: translateY(-1px);
+      }
+
       .bookmark-actions {
+        position: sticky;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.04);
+        padding-top: 8px;
+        padding-bottom: 8px;
+        z-index: 10;
         display: flex;
         justify-content: flex-end;
         gap: 10px;
@@ -163,9 +230,9 @@
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         border: none;
-        padding: 12px 24px;
-        border-radius: 12px;
-        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 14px;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -215,56 +282,63 @@
   <body>
     <div id="app">
       <div class="bookmark-add-modal">
-        <div class="bookmark-header">
-          <div id="bookmark-thumb" class="bookmark-thumb">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001z"
-                stroke="#667eea"
-                stroke-width="2"
-              />
-              <path
-                d="M12 15.001c-2.5 0-4.5 1.5-4.5 3.5s2 3.5 4.5 3.5 4.5-1.5 4.5-3.5-2-3.5-4.5-3.5z"
-                stroke="#667eea"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
-          <div class="bookmark-info">
-            <div id="bookmark-title-view" class="bookmark-title-view">
-              현재 페이지
+        <div class="bookmark-content-area">
+          <div class="bookmark-header">
+            <div id="bookmark-thumb" class="bookmark-thumb">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001z"
+                  stroke="#667eea"
+                  stroke-width="2"
+                />
+                <path
+                  d="M12 15.001c-2.5 0-4.5 1.5-4.5 3.5s2 3.5 4.5 3.5 4.5-1.5 4.5-3.5-2-3.5-4.5-3.5z"
+                  stroke="#667eea"
+                  stroke-width="2"
+                />
+              </svg>
             </div>
-            <div id="bookmark-desc" class="bookmark-desc">
-              설명을 가져오는 중...
+            <div class="bookmark-info">
+              <div id="bookmark-title-view" class="bookmark-title-view">
+                현재 페이지
+              </div>
+              <div id="bookmark-desc" class="bookmark-desc">
+                설명을 가져오는 중...
+              </div>
             </div>
           </div>
-        </div>
-        <textarea
-          id="bookmark-note"
-          class="bookmark-note"
-          placeholder="이 페이지에 대한 메모를 작성하세요..."
-        ></textarea>
-        <div class="bookmark-meta">
-          <select id="bookmark-collection" class="bookmark-collection">
-            <option value="기본">기본 컬렉션</option>
-            <option value="업무">업무</option>
-            <option value="학습">학습</option>
-            <option value="개발">개발</option>
-            <option value="디자인">디자인</option>
-            <option value="참고자료">참고자료</option>
-          </select>
-          <input
-            id="bookmark-url"
-            class="bookmark-url"
-            readonly
-            placeholder="URL이 표시됩니다"
-          />
+          <textarea
+            id="bookmark-note"
+            class="bookmark-note"
+            placeholder="이 페이지에 대한 메모를 작성하세요..."
+          ></textarea>
+          <div class="bookmark-meta">
+            <select id="bookmark-collection" class="bookmark-collection">
+              <option value="default">기본 컬렉션</option>
+            </select>
+            <input
+              id="bookmark-url"
+              class="bookmark-url"
+              readonly
+              placeholder="URL이 표시됩니다"
+            />
+            <input
+              id="bookmark-tags"
+              class="bookmark-tags"
+              placeholder="태그를 쉼표로 구분하여 입력하세요 (예: 개발, 참고자료)"
+            />
+          </div>
+          <div class="bookmark-options">
+            <button id="highlight-btn" class="option-btn">⭐ 하이라이트</button>
+            <button id="tab-btn" class="option-btn">📑 탭으로 열기</button>
+            <button id="favorite-btn" class="option-btn">❤️ 즐겨찾기</button>
+          </div>
         </div>
         <div class="bookmark-actions">
           <button id="save-btn" class="save-btn">💾 북마크 저장</button>
@@ -276,171 +350,6 @@
       ✅ 북마크가 저장되었습니다!
     </div>
 
-    <script>
-      class BookmarkManager {
-        constructor() {
-          this.initializeElements();
-          this.loadCurrentPageInfo();
-          this.bindEvents();
-        }
-
-        initializeElements() {
-          this.elements = {
-            thumb: document.getElementById("bookmark-thumb"),
-            title: document.getElementById("bookmark-title-view"),
-            desc: document.getElementById("bookmark-desc"),
-            note: document.getElementById("bookmark-note"),
-            collection: document.getElementById("bookmark-collection"),
-            url: document.getElementById("bookmark-url"),
-            saveBtn: document.getElementById("save-btn"),
-            modal: document.querySelector(".bookmark-add-modal"),
-            successMessage: document.getElementById("success-message"),
-          };
-        }
-
-        async loadCurrentPageInfo() {
-          try {
-            // 현재 페이지 정보 시뮬레이션 (실제 크롬 익스텐션에서는 chrome.tabs API 사용)
-            const pageInfo = {
-              title: document.title || "새 페이지",
-              url: window.location.href,
-              description: this.getPageDescription(),
-              favicon: this.getFaviconUrl(),
-            };
-
-            this.updatePageInfo(pageInfo);
-          } catch (error) {
-            console.error("페이지 정보 로드 실패:", error);
-            this.updatePageInfo({
-              title: "알 수 없는 페이지",
-              url: "https://example.com",
-              description: "페이지 정보를 가져올 수 없습니다.",
-              favicon: null,
-            });
-          }
-        }
-
-        getPageDescription() {
-          const metaDesc = document.querySelector('meta[name="description"]');
-          if (metaDesc) return metaDesc.content;
-
-          const ogDesc = document.querySelector(
-            'meta[property="og:description"]'
-          );
-          if (ogDesc) return ogDesc.content;
-
-          const firstP = document.querySelector("p");
-          if (firstP) return firstP.textContent.substring(0, 100) + "...";
-
-          return "페이지 설명이 없습니다.";
-        }
-
-        getFaviconUrl() {
-          const favicon = document.querySelector(
-            'link[rel="icon"], link[rel="shortcut icon"]'
-          );
-          return favicon ? favicon.href : null;
-        }
-
-        updatePageInfo(pageInfo) {
-          this.elements.title.textContent = pageInfo.title;
-          this.elements.desc.textContent = pageInfo.description;
-          this.elements.url.value = pageInfo.url;
-
-          if (pageInfo.favicon) {
-            this.elements.thumb.innerHTML = `<img src="${pageInfo.favicon}" alt="favicon" style="width: 32px; height: 32px; border-radius: 6px;">`;
-          } else {
-            // 기본 아이콘 유지
-            this.elements.thumb.innerHTML = `
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    `;
-          }
-        }
-
-        bindEvents() {
-          this.elements.saveBtn.addEventListener("click", () =>
-            this.saveBookmark()
-          );
-
-          // 엔터키로 저장
-          document.addEventListener("keydown", (e) => {
-            if (e.ctrlKey && e.key === "Enter") {
-              this.saveBookmark();
-            }
-          });
-        }
-
-        async saveBookmark() {
-          const bookmarkData = {
-            title: this.elements.title.textContent,
-            url: this.elements.url.value,
-            description: this.elements.desc.textContent,
-            note: this.elements.note.value,
-            collection: this.elements.collection.value,
-            timestamp: new Date().toISOString(),
-            id: Date.now().toString(),
-          };
-
-          try {
-            this.elements.modal.classList.add("loading");
-
-            // 북마크 저장 (localStorage 사용)
-            const savedBookmarks = JSON.parse(
-              localStorage.getItem("bookmarks") || "[]"
-            );
-            savedBookmarks.push(bookmarkData);
-            localStorage.setItem("bookmarks", JSON.stringify(savedBookmarks));
-
-            // 성공 메시지 표시
-            this.showSuccessMessage();
-
-            // 폼 리셋
-            this.elements.note.value = "";
-            this.elements.collection.selectedIndex = 0;
-
-            console.log("북마크 저장됨:", bookmarkData);
-          } catch (error) {
-            console.error("북마크 저장 실패:", error);
-            alert("북마크 저장에 실패했습니다. 다시 시도해주세요.");
-          } finally {
-            this.elements.modal.classList.remove("loading");
-          }
-        }
-
-        showSuccessMessage() {
-          this.elements.successMessage.classList.add("show");
-          setTimeout(() => {
-            this.elements.successMessage.classList.remove("show");
-          }, 3000);
-        }
-
-        // 저장된 북마크 조회 (디버깅용)
-        getSavedBookmarks() {
-          return JSON.parse(localStorage.getItem("bookmarks") || "[]");
-        }
-
-        // 북마크 삭제 (디버깅용)
-        clearAllBookmarks() {
-          localStorage.removeItem("bookmarks");
-          console.log("모든 북마크가 삭제되었습니다.");
-        }
-      }
-
-      // 북마크 매니저 초기화
-      document.addEventListener("DOMContentLoaded", () => {
-        window.bookmarkManager = new BookmarkManager();
-
-        // 개발자 도구에서 사용할 수 있는 헬퍼 함수들
-        window.showBookmarks = () => {
-          console.table(window.bookmarkManager.getSavedBookmarks());
-        };
-
-        window.clearBookmarks = () => {
-          window.bookmarkManager.clearAllBookmarks();
-        };
-      });
-    </script>
+    <script src="js/popup.js"></script>
   </body>
 </html>
